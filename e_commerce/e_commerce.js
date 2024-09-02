@@ -39,14 +39,14 @@ function updateCart() {
     cart.forEach((product, index) => {
         const itemDiv = document.createElement('div');
         itemDiv.innerHTML = `
-            <p>${product.name} - $${product.price} <button onclick="removeFromCart(${index})">Remove</button></p>
+            <p>${product.name} - RS${product.price} <button onclick="removeFromCart(${index})">Remove</button></p>
         `;
         cartItems.appendChild(itemDiv);
     });
 
     cartCount.textContent = cart.length;
     const total = cart.reduce((acc, product) => acc + product.price, 0);
-    cartTotal.textContent = `Total: $${total}`;
+    cartTotal.textContent = `Total: RS${total}`;
 }
 
 function removeFromCart(index) {
