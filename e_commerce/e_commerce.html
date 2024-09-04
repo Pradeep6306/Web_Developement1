@@ -10,6 +10,17 @@
     <header>
         <h1>Online Store</h1>
         <nav>
+            <button class="menu-button" id="menuButton">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </button>
+            <div id="dropdownMenu" class="dropdown-menu">
+                <a href="order.html">Order History</a>
+                <a href="account_setting.html">Account Settings</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="#">Logout</a>
+              </div>
             <input type="text" id="search" placeholder="Search products...">
             <div id="cart">
                 <span id="cart-count">0</span> items in cart
@@ -28,6 +39,7 @@
             <div id="cart-total">Total: Rs 0</div>
             <button id="checkout-btn">Checkout</button>
         </section>
+
     </main>
 
     <footer>

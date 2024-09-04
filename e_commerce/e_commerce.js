@@ -34,6 +34,7 @@ function addToCart(productId) {
     updateCart();
 }
 
+
 function updateCart() {
     cartItems.innerHTML = '';
     cart.forEach((product, index) => {
@@ -49,10 +50,12 @@ function updateCart() {
     cartTotal.textContent = `Total: RS${total}`;
 }
 
+
 function removeFromCart(index) {
     cart.splice(index, 1);
     updateCart();
 }
+
 
 document.getElementById('checkout-btn').addEventListener('click', () => {
     checkoutModal.style.display = 'flex';
@@ -70,4 +73,17 @@ checkoutForm.addEventListener('submit', (e) => {
     updateCart();
 });
 
+let menuButton = document.getElementById('menuButton');
+let dropdownMenu = document.getElementById('dropdownMenu');
+
+menuButton.addEventListener('click', () => {
+    dropdownMenu.style.display=dropdownMenu.style.display==="block"?"none":"block"
+});
+
+
+window.addEventListener('click', (e) => {
+    if (!menuButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});
 renderProducts();
